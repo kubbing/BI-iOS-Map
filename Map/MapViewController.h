@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+- (IBAction)centerButtonTapped:(id)sender;
 
 @end

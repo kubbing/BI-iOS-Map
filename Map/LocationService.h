@@ -1,5 +1,5 @@
 //
-//  LocationManager.h
+//  LocationService.h
 //  Map
 //
 //  Created by Jakub Hladík on 07.11.12.
@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LocationManager : NSObject
+@interface LocationService : NSObject <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
++ (LocationService *)sharedService;
+
+- (void)startService;
 
 @end
